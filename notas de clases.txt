@@ -1,0 +1,21 @@
+parametros mysql
+
+-u = root
+-h = localhost
+-p = localhost
+
+en el administrador de tareas el easyphp lo llama eds-dbserver 
+al mysql servicio
+
+Si ingresamos mysql -u root
+
+tambien se puede ingresar a un puerto especifico (es especificar ir al localhost
+si no se escribe se supone):
+
+mysql -u root -h 127.0.0.1 
+
+Instrucciones mysql en consola:
+
+show databases = nos permite ver la base de datos.
+create database eduardo; = crea la base de datos.
+drop database eduardo; =elimina la base de datos
