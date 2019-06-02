@@ -1,0 +1,13 @@
+Enunciado de la tarea 1 de la sección 2920
+
+Realizar las siguientes actividades (tomar printscreen que evidencia la realización de cada objetivo):
+
+1.- Descagar e instalar el instalador de Mysql de la página oficial de Oracle. Conectarse al servidor local usando la consola de Windows y crear una base de datos con el nombre "desafio1_A"
+
+2.- Instalar MySQL Workbench y conectarse al servidor local. Crear una nueva base de datos con el nombre "desafio1_B"
+
+3.- Cambiar la contraseña de root y crear un usuario nuevo con el nombre "d1" que solo pueda acceder a la base de datos "desafio1_B"
+
+4.- Crear en el administrador de conexiones 2 conexiones, una para root y otra para el usuario creado en el paso anterior. Conectarse con cada una de las conexiones creadas
+
+5.- Crear un nuevo modelo en MySQL Workbench, donde debe crear una base de datos con el nombre "desafio1_C", que tenga las tablas para almacenar los datos de los alumnos, profesores y cursos que se dictan en la academia. Guardar el modelo y ejecutar el forward Engineer. Evidenciar como se creo la base de datos en la conexion de root
