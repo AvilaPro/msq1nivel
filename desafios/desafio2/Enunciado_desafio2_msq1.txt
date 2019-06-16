@@ -1,0 +1,12 @@
+Enunciado de la tarea 2 de la sección 2920
+Realizar las siguientes actividades, enviar los printscreen que hagan falta para evidenciar el cumplimiento del objetivo y cualquier otro archivo resultante de la actividad, por ejemplo, archivos SQL, JSON, etc:
+
+1.- Usando MySQL WorkBench, conectarse con el servidor local para crear una base de datos con el nombre "desafio2". Crear en esta base de datos una nueva tabla con el nombre "producto", que tenga los campos: "id" de tipo bigint (con los atributos NN,UN,PK,AI), "nombre" de tipo varchar(150) (con los atributos NN,UQ), "descripcion" de tipo text, "existencia" de tipo int (NN,UN), "precio" de tipo decimal(10,2) (con los atributos UN,NN), "fecha_vencimiento" de tipo datetime, "codigo" de tipo int(10) (con los atributos NN,ZF,UN), "foto" de tipo blob. Crear otra tabla con el nombre "factura", que tenga los campos: "id" de tipo bigint (PK,AI,NN,UN), "numero" de tipo bigint (UQ,NN,UN), "id_cliente" de tipo int (UN,NN), "fecha" de tipo timestamp (NN) y "monto" de tipo float(8,2). Crear otra tabla con el nombre "producto_factura" con los campos: "id" (PK,AI,NN,UN), "id_producto" de tipo bigint (NN,UN), "id_factura" de tipo bigint (NN,UN) y el campo "cantidad" de tipo int (UN,NN)
+
+2.- Usando MySQL WorkBench, agregar a la tabla "producto" un indice usando el campo codigo y otro usando el campo fecha_vencimiento. Agregar un indice a la tabla "factura" usando el campo id_cliente y otro usando el campo fecha. Agregar a la tabla "producto_factura" un indice usando el campo id_producto, un indice usando el campo id_factura y otro indice de clave unica que combine los campos id_producto e id_factura
+
+3.- Usando MySQL WorkBench, agregar al menos 5 registros a cada tabla y exportarlos en formato JSON
+
+4.- Abrir la consola del sistema operativo para exportar la base de datos "desafio2" usando "mysqldump". Exportar la base de datos a un archivo con el nombre "desafio2_dump.sql"
+
+5.- Usando MySQL WorkBench, exportar todas las bases de datos que tenga en el servidor, guardando el script en un archivo con el nombre "desafio2_respaldo.sql"

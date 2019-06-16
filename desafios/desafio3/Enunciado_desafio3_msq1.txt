@@ -1,0 +1,12 @@
+Enunciado de la tarea 3 de la sección 2920
+Realizar las siguientes actividades:
+
+1.- Crear un modelo nuevo y aplicar ingenieria inversa para obtener los datos de la base de datos creada en el desafio anterior. Agregar al modelo un nuevo diagrama y hacer en el MER las relaciones entre las tablas: 1:N de producto a producto_factura y 1:n de factura con producto_factura (debe enviar el modelo y el printscreen del MER resultante)
+
+2.- Descargar y descomprimir el archivo adjunto. Importar la base de datos contenida en el archivo .sql y crear manualmente las claves foraneas en las tablas, de forma tal que las relaciones entre las tablas coincidan con el MER que esta en una imagen que tambien esta en el archivo adjunto (mostrar la instruccion sql donde creo cada clave foraneas exitosamente)
+
+3.- Hacer ingenieria inversa de la base de datos "desafio3" para crear el MER (enviar el modelo)
+
+4.- Escribir en una nueva pestana de scripts la instruccion SQL para mostrar el listado de secciones, con el nombre del profesor, el nombre de la materia, el numero total de alumnos inscritos en cada seccion y el monto total pagado por los alumnos de la seccion
+
+5.- Crear una nueva vista en la base de datos "desafio3", para generar un listado de alumnos, mostrando la cantidad de secciones en las que esta inscrito y el monto total pagado en todas los cursos que ha realizado (mostrar la vista creada exitosamente y el resultado que arroja la misma)
