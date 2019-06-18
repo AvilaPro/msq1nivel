@@ -19,3 +19,7 @@ Instrucciones mysql en consola:
 show databases = nos permite ver la base de datos.
 create database eduardo; = crea la base de datos.
 drop database eduardo; =elimina la base de datos
+
+Los procedimientos almacenados pueden recibir parametros de entrada (in por defecto) o de salida (out, hay que indicarlo)
+
+Las funciones:
