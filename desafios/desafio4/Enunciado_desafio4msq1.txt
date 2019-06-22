@@ -1,0 +1,14 @@
+Enunciado de la tarea 4 de la sección 2920
+Utilizando la base de datos creada en el desafio anterior realice las siguientes actividades (el MER esta adjunto por si hay dudas de cual es la base de datos con la que van a trabajar):
+
+1.- Crear una vista que genere un listado de los alumnos que se inscribieron el mes pasado (utilice las funciones de fecha). El listado debe contener el id de la seccion, el nombre del alumno, el nombre del curso y la fecha en que se inscribio en formato D/M/Y
+
+2.- Crear un procedimiento almacenado que le asigne al costo de un alumno de una seccion (alumno_seccion.costo) el costo del curso (curso.costo), cuando el alumno se haya inscrito (alumno_seccion.fecha_inscripcion) hace más de 2 meses con respecto a la fecha actual
+
+3.- Crear un procedimiento almacenado que le aumente en numero N de dias la fecha de inicio de una seccion (campo seccion.fecha_inicio), donde N debe ser un parámetro recibido por el procedimiento almacenado
+
+4.- Crear una función que retorne el numero de secciones que tiene asignada un profesor. El id del profesor debe recibirse por parámetro
+
+5.- Crear una vista que muestre el listado de profesores, mostrando el id, nombre y el número de secciones que tiene asignadas (usando la función creada en el objetivo anterior)
+
+Descargar Archivo Adjunto
