@@ -8,6 +8,8 @@ FROM
         INNER JOIN
     alumno ON alumno_seccion.alumno_id = alumno.id
         INNER JOIN
-    curso ON alumno_seccion.seccion_id = curso.id
+    seccion ON alumno_seccion.seccion_id = seccion.id
+        INNER JOIN
+    curso ON seccion.curso_id = curso.id
 WHERE
     alumno_seccion.fecha_inscripcion BETWEEN '2019-04-01' AND '2019-06-01'

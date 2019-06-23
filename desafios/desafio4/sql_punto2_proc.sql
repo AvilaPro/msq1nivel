@@ -1,5 +1,14 @@
-UPDATE alumno_seccion 
+UPDATE alumno_seccion,
+    curso 
 SET 
-    costo = curso.costo
+    al_sec_costo = curso_costo
 WHERE
-    alumno_seccion.fecha_inscripcion < (MONTH(CURDATE()) - 2) and 
+    (SELECT 
+            curso_costo
+        FROM
+            curso
+                INNER JOIN
+            seccion ON seccion.curso_id = curso.id
+        WHERE
+            alumno_seccion.seccion_id = seccion.id)
+        AND (MONTH(alumno_seccion.fecha_inscripcion) < (MONTH(CURDATE()) - 2))
