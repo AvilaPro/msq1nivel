@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `desafio4` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `desafio4`;
--- MySQL dump 10.13  Distrib 8.0.16, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.12, for Win32 (AMD64)
 --
 -- Host: 127.0.0.1    Database: desafio4
 -- ------------------------------------------------------
@@ -9,7 +9,7 @@ USE `desafio4`;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
- SET NAMES utf8 ;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,7 +23,7 @@ USE `desafio4`;
 
 DROP TABLE IF EXISTS `alumno`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `alumno` (
   `id` int(8) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
@@ -48,7 +48,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `alumno_mes_pasado`;
 /*!50001 DROP VIEW IF EXISTS `alumno_mes_pasado`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8mb4;
+SET character_set_client = utf8;
 /*!50001 CREATE VIEW `alumno_mes_pasado` AS SELECT 
  1 AS `Seccion`,
  1 AS `Nombre`,
@@ -62,7 +62,7 @@ SET character_set_client = @saved_cs_client;
 
 DROP TABLE IF EXISTS `alumno_seccion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `alumno_seccion` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `alumno_id` int(11) NOT NULL,
@@ -79,7 +79,7 @@ CREATE TABLE `alumno_seccion` (
 
 LOCK TABLES `alumno_seccion` WRITE;
 /*!40000 ALTER TABLE `alumno_seccion` DISABLE KEYS */;
-INSERT INTO `alumno_seccion` VALUES (1,1,7,'2019-05-16',99000),(2,2,6,'2019-05-15',85000),(3,3,5,'2019-05-18',101000),(4,4,4,'2019-05-11',90000),(5,5,3,'2019-05-16',95000),(6,6,2,'2019-05-18',101000),(7,5,1,'2019-05-16',80000),(8,6,7,'2019-05-16',75000),(9,7,1,'2019-05-16',101000),(10,8,2,'2019-05-16',110000),(11,9,3,'2019-05-11',99000),(12,10,3,'2019-05-11',95000),(13,4,2,'2019-05-15',85000),(23,5,5,'2019-03-15',10000);
+INSERT INTO `alumno_seccion` VALUES (1,1,7,'2019-05-16',99000),(2,2,6,'2019-05-15',85000),(3,3,5,'2019-05-18',101000),(4,4,4,'2019-05-11',90000),(5,5,3,'2019-05-16',95000),(6,6,2,'2019-05-18',101000),(7,5,1,'2019-05-16',80000),(8,6,7,'2019-05-16',75000),(9,7,1,'2019-05-16',101000),(10,8,2,'2019-05-16',110000),(11,9,3,'2019-05-11',99000),(12,10,3,'2019-05-11',95000),(13,4,2,'2019-05-15',85000),(23,5,5,'2019-03-15',105000);
 /*!40000 ALTER TABLE `alumno_seccion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +89,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `curso`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `curso` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
@@ -109,12 +109,26 @@ INSERT INTO `curso` VALUES (1,'MySQL',105000),(2,'Php',101000),(3,'HTML ',112000
 UNLOCK TABLES;
 
 --
+-- Temporary view structure for view `listado_profesor`
+--
+
+DROP TABLE IF EXISTS `listado_profesor`;
+/*!50001 DROP VIEW IF EXISTS `listado_profesor`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `listado_profesor` AS SELECT 
+ 1 AS `id`,
+ 1 AS `nombre_profesor`,
+ 1 AS `Numero de secciones asignadas`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Table structure for table `profesor`
 --
 
 DROP TABLE IF EXISTS `profesor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `profesor` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
@@ -138,14 +152,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `seccion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `seccion` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fecha_inicio` date DEFAULT NULL,
   `curso_id` tinyint(5) NOT NULL,
   `profesor_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2931 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,17 +168,92 @@ CREATE TABLE `seccion` (
 
 LOCK TABLES `seccion` WRITE;
 /*!40000 ALTER TABLE `seccion` DISABLE KEYS */;
-INSERT INTO `seccion` VALUES (1,'2019-05-18',1,1),(2,'2019-05-20',2,2),(3,'2019-05-20',4,8),(4,'2019-04-15',5,3),(5,'2019-04-20',6,7),(6,'2019-04-10',7,8),(7,'2019-03-20',3,5),(8,'2019-03-15',1,4),(9,'2019-03-10',2,9),(10,'2019-02-20',4,10);
+INSERT INTO `seccion` VALUES (1,'2019-05-01',1,1),(2,'2019-05-22',2,2),(3,'2019-05-20',4,8),(4,'2019-04-15',5,3),(5,'2019-04-20',6,7),(6,'2019-04-10',7,8),(7,'2019-03-20',3,5),(8,'2019-03-15',1,4),(9,'2019-03-10',2,9),(10,'2019-02-20',4,10),(11,'2019-02-15',3,1);
 /*!40000 ALTER TABLE `seccion` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Dumping events for database 'desafio4'
---
-
---
 -- Dumping routines for database 'desafio4'
 --
+/*!50003 DROP FUNCTION IF EXISTS `num_secc_profesor` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` FUNCTION `NUM_SECC_PROFESOR`(id_prof int) RETURNS int(11)
+BEGIN
+return (select
+    COUNT(profesor_id)
+FROM
+    seccion
+WHERE
+    profesor_id = id_prof);
+RETURN 1;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `actualizar_precio` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizar_precio`()
+BEGIN
+ UPDATE alumno_seccion,
+    curso,
+    seccion 
+SET 
+    al_sec_costo = curso.curso_costo
+WHERE
+    (SELECT 
+            curso_costo
+        FROM
+            curso
+                INNER JOIN
+            seccion ON seccion.curso_id = curso.id
+        WHERE
+            alumno_seccion.seccion_id = seccion.id)
+        AND (MONTH(alumno_seccion.fecha_inscripcion) < (MONTH(CURDATE()) - 2));
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `cambiar_dia_seccion` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `cambiar_dia_seccion`(id_seccion int, N_dias int)
+BEGIN
+UPDATE seccion SET fecha_inicio = DATE_ADD(fecha_inicio, INTERVAL N_dias DAY)
+WHERE
+    seccion.id = id_seccion;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Final view structure for view `alumno_mes_pasado`
@@ -183,6 +272,24 @@ UNLOCK TABLES;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `listado_profesor`
+--
+
+/*!50001 DROP VIEW IF EXISTS `listado_profesor`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `listado_profesor` AS select `profesor`.`id` AS `id`,`profesor`.`nombre` AS `nombre_profesor`,`NUM_SECC_PROFESOR`(`profesor`.`id`) AS `Numero de secciones asignadas` from `profesor` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -193,4 +300,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-23  8:58:30
+-- Dump completed on 2019-06-23 19:53:48
